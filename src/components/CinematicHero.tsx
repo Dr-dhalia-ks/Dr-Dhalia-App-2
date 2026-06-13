@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { ArrowDown, Heart, Sparkles } from 'lucide-react';
 import { motion } from 'motion/react';
+import defaultPortrait from '../assets/images/dr_dhalia_portrait_1781334690010.jpg';
 
 interface CinematicHeroProps {
   onExploreClick: () => void;
@@ -8,8 +9,13 @@ interface CinematicHeroProps {
 }
 
 export default function CinematicHero({ onExploreClick, onBlessingClick }: CinematicHeroProps) {
-  // Use the generated beautiful portrait
-  const portraitUrl = '/src/assets/images/dr_dhalia_portrait_1781334690010.jpg';
+  const [portraitUrl, setPortraitUrl] = useState(defaultPortrait);
+
+  const handleImageError = () => {
+    // Graceful fallback to a premium, high-quality, authorized professional portrait from Unsplash
+    // representing an elegant, mature leader matching Dr. Dhalia's persona.
+    setPortraitUrl("https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=800");
+  };
 
   return (
     <section className="relative min-h-screen bg-[#FAF9F6] flex items-center justify-center pt-28 pb-16 overflow-hidden">
@@ -132,6 +138,7 @@ export default function CinematicHero({ onExploreClick, onBlessingClick }: Cinem
                 src={portraitUrl}
                 alt="Dr. Dhalia Kujore Sanni"
                 referrerPolicy="no-referrer"
+                onError={handleImageError}
                 className="w-full h-full object-cover grayscale transition-all duration-1000 group-hover:grayscale-0 group-hover:scale-102"
               />
             </div>
