@@ -98,8 +98,20 @@ export default function WisdomGrid() {
                     initial={{ opacity: 0, scale: 0.98 }}
                     animate={{ opacity: 1, scale: 1 }}
                     exit={{ opacity: 0, scale: 0.98 }}
-                    transition={{ duration: 0.35, delay: Math.min(0.2, (i % 6) * 0.04) }}
-                    className="group bg-white border-1.5 border-slate-204/80 hover:border-[#D4AF37] p-6 rounded-2xl flex flex-col justify-between transition-all duration-300 hover:shadow-[0_12px_30px_rgba(212,175,55,0.07)] relative overflow-hidden"
+                    whileHover={{ 
+                      scale: 1.03, 
+                      y: -5,
+                      borderColor: '#D4AF37'
+                    }}
+                    transition={{ 
+                      type: 'spring', 
+                      stiffness: 300, 
+                      damping: 20,
+                      layout: { duration: 0.3 },
+                      opacity: { duration: 0.25 },
+                      scale: { duration: 0.25 }
+                    }}
+                    className="group bg-white border-1.5 border-slate-200/80 hover:border-[#D4AF37] p-6 rounded-2xl flex flex-col justify-between transition-all duration-300 hover:shadow-[0_15px_30px_rgba(212,175,55,0.18)] cursor-pointer relative overflow-hidden"
                   >
                     {/* Tiny glowing tag color background mapping */}
                     <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-bl from-[#92BDD3]/5 to-transparent pointer-events-none" />

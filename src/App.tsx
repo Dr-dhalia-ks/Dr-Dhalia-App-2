@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Sparkles, Star, Award, Heart, RefreshCw, Compass } from 'lucide-react';
+import { Sparkles, Star, Award, Heart, RefreshCw, Compass, Instagram, Facebook } from 'lucide-react';
 
 import Navigation from './components/Navigation';
 import CinematicHero from './components/CinematicHero';
@@ -216,10 +216,48 @@ export default function App() {
             </span>
           </div>
 
-          <div className="flex justify-center gap-6 text-[10px] font-mono tracking-widest text-[#92BDD3]">
-            <a href="#" onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="hover:underline uppercase">HOME</a>
-            <a href="#" onClick={(e) => { e.preventDefault(); scrollToSection('story-timeline-section'); }} className="hover:underline uppercase">THE JOURNEY</a>
-            <a href="#" onClick={(e) => { e.preventDefault(); scrollToSection('lesson-wisdom'); }} className="hover:underline uppercase">WISDOM ARCHIVE</a>
+          <div className="flex flex-col items-center gap-4">
+            <div className="flex justify-center gap-6 text-[10px] font-mono tracking-widest text-[#92BDD3]">
+              <a href="#" onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="hover:underline uppercase">HOME</a>
+              <a href="#" onClick={(e) => { e.preventDefault(); scrollToSection('story-timeline-section'); }} className="hover:underline uppercase">THE JOURNEY</a>
+              <a href="#" onClick={(e) => { e.preventDefault(); scrollToSection('lesson-wisdom'); }} className="hover:underline uppercase">WISDOM ARCHIVE</a>
+            </div>
+            
+            <div className="flex justify-center gap-4 items-center">
+              <a
+                href="https://www.instagram.com/drdhaliaks/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-8 h-8 rounded-full border border-slate-700/80 hover:border-[#D4AF37] hover:text-[#D4AF37] hover:shadow-[0_0_12px_rgba(212,175,55,0.4)] flex items-center justify-center text-slate-400 transition-all duration-300 group"
+                aria-label="Instagram"
+              >
+                <Instagram className="w-4 h-4" />
+              </a>
+              <a
+                href="https://web.facebook.com/DrDhaliaKS"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-8 h-8 rounded-full border border-slate-700/80 hover:border-[#D4AF37] hover:text-[#D4AF37] hover:shadow-[0_0_12px_rgba(212,175,55,0.4)] flex items-center justify-center text-slate-400 transition-all duration-300 group"
+                aria-label="Facebook"
+              >
+                <Facebook className="w-4 h-4" />
+              </a>
+              <a
+                href="https://www.tiktok.com/@drhaliaks"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-8 h-8 rounded-full border border-slate-700/80 hover:border-[#D4AF37] hover:text-[#D4AF37] hover:shadow-[0_0_12px_rgba(212,175,55,0.4)] flex items-center justify-center text-slate-400 transition-all duration-300 group"
+                aria-label="TikTok"
+              >
+                <svg
+                  className="w-3.5 h-3.5 fill-current"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.02 1.59 4.23.95 1.18 2.22 2.01 3.65 2.45v3.91c-1.21-.1-2.43-.51-3.48-1.15-.81-.49-1.52-1.16-2.06-1.94V14a5.2 5.2 0 0 1-.36 1.91c-.48 1.16-1.33 2.15-2.39 2.76A5.4 5.4 0 0 1 8.87 19c-1.38 0-2.71-.52-3.71-1.46-1.05-.98-1.66-2.35-1.74-3.78a5.52 5.52 0 0 1 1.05-3.86 5.42 5.42 0 0 1 3.49-2.22c.3-.06.6-.08.91-.08l.01 3.84c-1.07.03-2.11.75-2.48 1.76-.32.88-.1 1.86.52 2.5a3.11 3.11 0 0 0 2.21.91c1.19 0 2.22-.84 2.46-2.01.07-.35.09-.7.09-1.06V.02z" />
+                </svg>
+              </a>
+            </div>
           </div>
 
           {/* Seed reset for reviews */}
