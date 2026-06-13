@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
+
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", "Roboto", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-display: "Inter", "Roboto", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+  
+  --color-brand-blue: #92BDD3;
+  --color-luxury-cream: #FAF9F6;
+  --color-luxury-champagne: #F5EFEB;
+  --color-luxury-ivory: #FCFAF2;
+  --color-luxury-gold: #D4AF37;
+  --color-luxury-charcoal: #1C1C1C;
+}
+
+/* Theme setups */
+html, body {
+  font-family: var(--font-sans);
+  background-color: var(--color-luxury-cream);
+  color: var(--color-luxury-charcoal);
+  scroll-behavior: smooth;
+  height: 100%;
+}
+
+::selection {
+  background-color: var(--color-brand-blue);
+  color: #ffffff;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-luxury-cream);
+}
+::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94A3B8;
+}
+
+.luxury-glass {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+.gold-glow {
+  box-shadow: 0 4px 30px rgba(184, 150, 110, 0.08);
+}
